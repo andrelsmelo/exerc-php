@@ -2,18 +2,6 @@
 
 //Regras de validação de campos
 
-function get_endereco($cep){
-
-
-  // formatar o cep removendo caracteres nao numericos
-  $cep = preg_replace("/[^0-9]/", "", $cep);
-  $url = "http://viacep.com.br/ws/$cep/json/";
-
-  $json = simplexml_load_file($url);
-  return $json;
-};
-
-
 //Regras de Mensagens
 
 function totalIR($value1, $value2, $value3) {
