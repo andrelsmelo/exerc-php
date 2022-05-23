@@ -2,7 +2,6 @@
     margin: 6px;
     padding: 6px;
     font-family: sans-serif;
-<<<<<<< HEAD
     text-align: center;
 }
 
@@ -15,16 +14,6 @@
     text-align: center;
     font-size: 18px;
     margin-bottom: 16px;
-=======
-}
-
-.container {
-    width: 1000px;
-    height: 500px;
-    margin:auto;
-    position: relative;
-    text-align: center;
->>>>>>> 4c30cad3131aa16bf937f8cea36dea2e78a9f30d
 }
 .btn-box {
     width: 100%;
@@ -35,7 +24,6 @@
     text-align: center;
 }
 
-<<<<<<< HEAD
 .form {
     margin-top: 50px;
     width: 600px;
@@ -43,8 +31,6 @@
     outline: auto;
 }
 
-=======
->>>>>>> 4c30cad3131aa16bf937f8cea36dea2e78a9f30d
 form button {
     width: 110px;
     height: 35px;
@@ -59,9 +45,4 @@ form button {
 
 ::placeholder {
     color: #777;
-<<<<<<< HEAD
 }
-=======
-}
-
->>>>>>> 4c30cad3131aa16bf937f8cea36dea2e78a9f30d
