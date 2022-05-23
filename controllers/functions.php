@@ -2,14 +2,17 @@
 
 //Regras de validação de campos
 
-function updateRequirements() {
-    $ir2022 = document.getElementById('ir2022').value;
-    if ($ir2022 != null) {
-      document.getElementByName('#IR2021').required == true;
-    } else {
-      document.getElementByName('#IR2021').required == false;
-    }
-  }
+function get_endereco($cep){
+
+
+  // formatar o cep removendo caracteres nao numericos
+  $cep = preg_replace("/[^0-9]/", "", $cep);
+  $url = "http://viacep.com.br/ws/$cep/json/";
+
+  $json = simplexml_load_file($url);
+  return $json;
+};
+
 
 //Regras de Mensagens
 
