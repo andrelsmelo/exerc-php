@@ -6,33 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="views/app.css">
+    <link rel="stylesheet" href="views/form.css">
 
     <title>Projeto Formulario PHP</title>
   </head>
   <body>
     <nav class="welcome-text">
         <span class="navbar-brand mb-0 h1"> Bem vindo <?php echo htmlspecialchars($_GET["cadastrante"]) ?> </span>
+        <br><br>
+        <span> Preencha o formulario abaixo</span>
     </nav>
 
     <div class="container">
-        <form id="form" method="POST" action="end-page.php">
+        <form id="form" method="POST" action="finalização.php">
             <input type="text" name="firstName" value="<?php echo htmlspecialchars($_GET["cadastrante"])?>" placeholder="Primeiro Nome" required/>
             <input type="text" name="lastName" placeholder="Ultimo Nome" required/>
             <br>
             <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" />
-            <div>
-              <p id="alert"></p>
-            </div>
             <input type="text" id="phone" name="phone" placeholder="Digite seu telefone"/>
             <br>
             <input id="cep" type="text"  name="cep" placeholder="Digite seu CEP" />
-            <input id="cidade" type="text"  name="city" placeholder="Digite sua Cidade" />
+            <input id="city" type="text"  name="city" placeholder="Digite sua Cidade" />
             <br>
-            <input id="bairro" type="text"  name="district" placeholder="Digite seu Bairro" />
-            <input id="logradouro" type="text"  name="address" placeholder="Digite seu endereço" />
+            <input id="district" type="text"  name="district" placeholder="Digite seu Bairro" />
+            <input id="address" type="text"  name="address" placeholder="Digite seu endereço" />
             <br>
-            <input type="text" name="number" placeholder="Digite o numero de seu endereço" />
+            <input id= number type="text" name="number" placeholder="Digite o numero de seu endereço" />
             <input type="text" name="complement" placeholder="Digite um complemento" />
             <br>
             <input type="text" name="momFirstName" placeholder="Primeiro Nome da Mãe" required/>
@@ -61,7 +60,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 
     <script type="text/javascript" >
-    $("#phone").mask("(00) 0000-0000");
+    $("#phone").mask("(00) 00000-0000");
     $("#cep").mask("00.000-000");
     $("#cpf").mask("000.000.000-00");
     </script>
@@ -72,10 +71,10 @@
         url: 'https://viacep.com.br/ws/'+$(this).val().replace(/\D/g, '')+'/json/',  
         dataType: 'json',
         success: function(resposta){
-          $("#logradouro").val(resposta.logradouro);
-          $("#bairro").val(resposta.bairro);
-          $("#cidade").val(resposta.localidade);
-          $("#numero").focus();
+          $("#address").val(resposta.logradouro);
+          $("#district").val(resposta.bairro);
+          $("#city").val(resposta.localidade);
+          $("#number").focus();
         }
       });
     });

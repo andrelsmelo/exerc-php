@@ -1,38 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="views/app.css">
-
+    <link rel="stylesheet" href="views/profile.css">
     <title>Finalização</title>
 </head>
-<body>
-<?php setPerson();?>
-    <div class="container-final">
-    <form id="FormFullRegister">
-        <input type="text" name="output_firstName" value= "<?php echo $_POST["firstName"]; ?>" disabled=true/>
-        <input type="text" name="output_lastName" value="<?php echo $_POST["lastName"]; ?>" disabled=true/> <br>
-        <input type="text" name="output_cpf" value="<?php echo $_POST["cpf"]; ?>" disabled=true/> 
-        <input type="text" name="output_telefone" value="<?php echo $_POST["phone"]; ?>" disabled=true/> <br>
-        <input type="text" name="output_cep" value="<?php echo $_POST["cep"]; ?>" disabled=true/> 
-        <input type="text" name="output_cidade" value="<?php echo $_POST["city"]; ?>" disabled=true/> <br>
-        <input type="text" name="output_bairro" value="<?php echo $_POST["district"]; ?>" disabled=true/> 
-        <input type="text" name="output_endereco" value="<?php echo $_POST["address"]; ?>" disabled=true/><br>
-        <input type="text" name="output_numero" value="<?php echo $_POST["number"]; ?>" disabled=true/>
-        <input type="text" name="output_complemento" value="<?php echo $_POST["complement"]; ?>" disabled=true/> <br>
-        <input type="text" name="output_momFirstName" value="<?php echo $_POST["momFirstName"]; ?>" disabled=true/>
-        <input type="text" name="output_momLastName" value="<?php echo $_POST["momLastName"]; ?>" disabled=true/> <br>
-        <input type="text" name="output_dadFirstName" value="<?php echo $_POST["dadFirstName"]; ?>" disabled=true/>
-        <input type="text" name="output_dadLastName" value="<?php echo $_POST["dadLastName"]; ?>" disabled=true/> <br>
-        <input type="text" name="output_ir2022" value="<?php echo $_POST["IR2022"]; ?>" disabled=true/> <br>
-        <input type="text" name="output_ir2021" value="<?php echo $_POST["IR2021"]; ?>" disabled=true/> <br>
-        <input type="text" name="output_ir2020" value="<?php echo $_POST["IR2020"]; ?>"  disabled=true/> <br>
-        <input type="text" name="totalIR" value="<?=totalIR($_POST["IR2022"], $_POST["IR2021"],$_POST["IR2020"]) ?>"  disabled=true/> <br>
-        <input type="text" name="IRMessage" value="<?= showMessage($_POST["IR2022"], $_POST["IR2021"],$_POST["IR2020"]) ?>"  disabled=true/> <br>
-    </form>
-    </div>
 
+<body>
+    <div class="container">
+        <div class="main-body">
+            <div class="row gutters-sm">
+                <div class="col-md-8">
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Nome Completo</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <?php echo $_POST["firstName"] . " " . $_POST["lastName"];?>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">CPF</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                <?php echo $_POST["cpf"];?>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Telefone</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                <?php echo $_POST["phone"];?>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">CEP</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                <?php echo $_POST["cep"];?>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Endereço</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                <?php echo $_POST["address"] . " " . $_POST["number"] . ", " . $_POST["complement"] . " " . $_POST["city"] . " - " . $_POST["district"];?>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Nome da Mãe</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                <?php echo $_POST["momFirstName"] . " " . $_POST["momLastName"];?>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Nome do Pai</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                <?php echo $_POST["dadFirstName"] . " " . $_POST["dadLastName"];?>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Ir Declarado</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                <span> Ir 2022 &rArr; <?= $_POST["IR2022"]?> </span>
+                                <br>
+                                <span> Ir 2021 &rArr; <?= $_POST["IR2021"]?> </span>
+                                <br>
+                                <span> Ir 2020 &rArr; <?= $_POST["IR2020"]?> </span>
+                                <br>
+                                <br>
+                                <span> Total IR declarado &rArr; <?=totalIR($_POST["IR2022"], $_POST["IR2021"],$_POST["IR2020"]) ?></span>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0"> Mensagem</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                <?= showMessage($_POST["IR2022"], $_POST["IR2021"],$_POST["IR2020"]) ?>
+                                </div>
+                            </div>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
