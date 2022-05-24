@@ -9,6 +9,7 @@
     <title>Finalização</title>
 </head>
 <body>
+<?php setPerson();?>
     <div class="container-final">
     <form id="FormFullRegister">
         <input type="text" name="output_firstName" value= "<?php echo $_POST["firstName"]; ?>" disabled=true/>
@@ -25,14 +26,13 @@
         <input type="text" name="output_momLastName" value="<?php echo $_POST["momLastName"]; ?>" disabled=true/> <br>
         <input type="text" name="output_dadFirstName" value="<?php echo $_POST["dadFirstName"]; ?>" disabled=true/>
         <input type="text" name="output_dadLastName" value="<?php echo $_POST["dadLastName"]; ?>" disabled=true/> <br>
-        <input type="text" name="output_ir_incoming[]" value="<?php echo $_POST["IR2022"]; ?>" disabled=true/> <br>
-        <input type="text" name="output_ir_incoming[]" value="<?php echo $_POST["IR2021"]; ?>" disabled=true/> <br>
-        <input type="text" name="output_ir_incoming[]" value="<?php echo $_POST["IR2020"]; ?>"  disabled=true/> <br>
+        <input type="text" name="output_ir2022" value="<?php echo $_POST["IR2022"]; ?>" disabled=true/> <br>
+        <input type="text" name="output_ir2021" value="<?php echo $_POST["IR2021"]; ?>" disabled=true/> <br>
+        <input type="text" name="output_ir2020" value="<?php echo $_POST["IR2020"]; ?>"  disabled=true/> <br>
         <input type="text" name="totalIR" value="<?=totalIR($_POST["IR2022"], $_POST["IR2021"],$_POST["IR2020"]) ?>"  disabled=true/> <br>
         <input type="text" name="IRMessage" value="<?= showMessage($_POST["IR2022"], $_POST["IR2021"],$_POST["IR2020"]) ?>"  disabled=true/> <br>
     </form>
     </div>
 
-    <?php print_r(showPerson());?>
 </body>
 </html>

@@ -1,7 +1,9 @@
 <?php
 
+$person;
 
-$person = [
+function setPerson() {
+    $newPerson = [
         "firstName" => $_POST["firstName"],
         "lastName" => $_POST["lastName"],
         "cpf" => $_POST["cpf"],
@@ -21,7 +23,9 @@ $person = [
         "IR2020" => $_POST["IR2020"]
     ];
 
+    return $person = $newPerson;
+}
+
     function showPerson() {
         print_r("Passou");
-        return $person;
     }

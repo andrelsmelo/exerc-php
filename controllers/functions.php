@@ -1,15 +1,14 @@
 <?php
 
-//Regras de validação de campos
-
 //Regras de Mensagens
 
-function totalIR($value1, $value2, $value3) {
-    return  $value1 + $value2 + $value3;
+function totalIR($ir2022, $ir2021, $ir2020) {
+    $totalIR = $ir2022 + $ir2021 + $ir2020;
+    return $totalIR;
 }
 
-function showMessage($value1, $value2, $value3) {
-    $total = $value1 + $value2 + $value3;
+function showMessage($ir2022, $ir2021, $ir2020) {
+    $total = $ir2022 + $ir2021 + $ir2020;
     $media = $total / 12;
 
     if ($media <= 1200){

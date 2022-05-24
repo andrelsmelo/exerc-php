@@ -21,6 +21,9 @@
             <input type="text" name="lastName" placeholder="Ultimo Nome" required/>
             <br>
             <input type="text" id="cpf" name="cpf" placeholder="Digite seu CPF" />
+            <div>
+              <p id="alert"></p>
+            </div>
             <input type="text" id="phone" name="phone" placeholder="Digite seu telefone"/>
             <br>
             <input id="cep" type="text"  name="cep" placeholder="Digite seu CEP" />
@@ -38,14 +41,14 @@
             <input type="text" name="dadFirstName" placeholder="Primeiro Nome do Pai" />
             <input type="text" name="dadLastName" placeholder="Ultimo Nome do Pai" />
             <br>
-            <input type="text" id= "ir2022" name="IR2022" placeholder="Renda declarada este ano"/>
+            <input type="text" id= "ir2022" onkeyup="irIsSet()" name="IR2022" placeholder="Renda declarada este ano"/>
             <br>
-            <input type="text" id= "ir2021" name="IR2021" placeholder="Renda declarada ano passado"/>
+            <input type="text" id= "ir2021" onkeyup="irIsSet()" name="IR2021" placeholder="Renda declarada ano passado"/>
             <br>
-            <input type="text" id= "ir2020" name="IR2020" placeholder="Renda declarada ano retrasado"/>
+            <input type="text" id= "ir2020" onkeyup="irIsSet()" name="IR2020" placeholder="Renda declarada ano retrasado"/>
             <br>
             <div class="btn-box">
-              <button type="submit" id="submit"> Enviar </button>
+              <button type="submit" id="submit" disabled=true> Enviar </button>
             </div>
     </div>
 
@@ -77,5 +80,18 @@
       });
     });
     </script>
+  <script type="text/javascript">
+    function irIsSet() {
+    if(document.getElementById("ir2022").value !== '' ||
+        document.getElementById("ir2021").value !== '' ||
+        document.getElementById("ir2020").value !== '') {
+        document.getElementById("submit").disabled = false;
+        return;
+    }
+    else {
+        document.getElementById("submit").disabled = true;
+    }
+  }
+  </script>
 </body>
 </html>
