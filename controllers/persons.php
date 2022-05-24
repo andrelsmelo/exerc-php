@@ -2,7 +2,8 @@
 
 $person;
 
-function setPerson() {
+function setPerson()
+{
     $newPerson = [
         "firstName" => $_POST["firstName"],
         "lastName" => $_POST["lastName"],
@@ -26,6 +27,7 @@ function setPerson() {
     return $person = $newPerson;
 }
 
-    function showPerson() {
-        print_r("Passou");
-    }
+function showPerson()
+{
+    print_r("Passou");
+}

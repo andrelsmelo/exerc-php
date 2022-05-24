@@ -21,7 +21,7 @@
                                     <h6 class="mb-0">Nome Completo</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <?php echo $_POST["firstName"] . " " . $_POST["lastName"];?>
+                                    <?php echo $_POST["firstName"] . " " . $_POST["lastName"]; ?>
                                 </div>
                             </div>
                             <hr>
@@ -30,7 +30,7 @@
                                     <h6 class="mb-0">CPF</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $_POST["cpf"];?>
+                                    <?php echo $_POST["cpf"]; ?>
                                 </div>
                             </div>
                             <hr>
@@ -39,7 +39,7 @@
                                     <h6 class="mb-0">Telefone</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $_POST["phone"];?>
+                                    <?php echo $_POST["phone"]; ?>
                                 </div>
                             </div>
                             <hr>
@@ -48,7 +48,7 @@
                                     <h6 class="mb-0">CEP</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $_POST["cep"];?>
+                                    <?php echo $_POST["cep"]; ?>
                                 </div>
                             </div>
                             <hr>
@@ -57,7 +57,7 @@
                                     <h6 class="mb-0">Endereço</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $_POST["address"] . " " . $_POST["number"] . ", " . $_POST["complement"] . " " . $_POST["city"] . " - " . $_POST["district"];?>
+                                    <?php echo $_POST["address"] . " " . $_POST["number"] . ", " . $_POST["complement"] . " " . $_POST["city"] . " - " . $_POST["district"]; ?>
                                 </div>
                             </div>
                             <hr>
@@ -66,7 +66,7 @@
                                     <h6 class="mb-0">Nome da Mãe</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $_POST["momFirstName"] . " " . $_POST["momLastName"];?>
+                                    <?php echo $_POST["momFirstName"] . " " . $_POST["momLastName"]; ?>
                                 </div>
                             </div>
                             <hr>
@@ -75,7 +75,7 @@
                                     <h6 class="mb-0">Nome do Pai</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?php echo $_POST["dadFirstName"] . " " . $_POST["dadLastName"];?>
+                                    <?php echo $_POST["dadFirstName"] . " " . $_POST["dadLastName"]; ?>
                                 </div>
                             </div>
                             <hr>
@@ -84,14 +84,15 @@
                                     <h6 class="mb-0">Ir Declarado</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <span> Ir 2022 &rArr; <?= $_POST["IR2022"]?> </span>
-                                <br>
-                                <span> Ir 2021 &rArr; <?= $_POST["IR2021"]?> </span>
-                                <br>
-                                <span> Ir 2020 &rArr; <?= $_POST["IR2020"]?> </span>
-                                <br>
-                                <br>
-                                <span> Total IR declarado &rArr; <?=totalIR($_POST["IR2022"], $_POST["IR2021"],$_POST["IR2020"]) ?></span>
+                                    <span> Ir 2022 &rArr; <?= $_POST["IR2022"] ?> </span>
+                                    <br>
+                                    <span> Ir 2021 &rArr; <?= $_POST["IR2021"] ?> </span>
+                                    <br>
+                                    <span> Ir 2020 &rArr; <?= $_POST["IR2020"] ?> </span>
+                                    <br>
+                                    <br>
+                                    <span> Total IR declarado &rArr;
+                                        <?= totalIR($_POST["IR2022"], $_POST["IR2021"], $_POST["IR2020"]) ?></span>
                                 </div>
                             </div>
                             <hr>
@@ -100,7 +101,7 @@
                                     <h6 class="mb-0"> Mensagem</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                <?= showMessage($_POST["IR2022"], $_POST["IR2021"],$_POST["IR2020"]) ?>
+                                    <?= showMessage($_POST["IR2022"], $_POST["IR2021"], $_POST["IR2020"]) ?>
                                 </div>
                             </div>
                             <hr>
