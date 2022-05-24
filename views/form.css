@@ -1,9 +1,10 @@
-*{
+* {
     margin: 6px;
     padding: 6px;
     font-family: sans-serif;
     text-align: center;
 }
+
 .container {
     margin: auto;
     width: max-content;
