@@ -1,3 +1,4 @@
 # exerc-php
 
-Para iniciar o projeto rode o docker composer
+Para iniciar o projeto rode:
+    - `docker-compose up --build`
