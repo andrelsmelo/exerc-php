@@ -24,7 +24,7 @@
   </nav>
 
   <div class="container">
-    <form id="form" method="POST" action="finalização.php">
+    <form id="form" method="POST" action="finalizacao.php">
       <input type="text" name="firstName" value="<?php if (isset($_GET["cadastrante"])) {
                                                     echo $_GET["cadastrante"];
                                                   } ?>" placeholder="Primeiro Nome" required />

@@ -101,7 +101,7 @@
                                     <h6 class="mb-0"> Mensagem</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <?= showMessage($_POST["IR2022"], $_POST["IR2021"], $_POST["IR2020"]) ?>
+                                    <?= showMessage(averageMonthIr($_POST["IR2022"], $_POST["IR2021"], $_POST["IR2020"])) ?>
                                 </div>
                             </div>
                             <hr>
